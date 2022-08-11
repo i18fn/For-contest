@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if [ $1 = "new" ]; then
-    cat template.c >> $2.c
+    cat template.c >> ./practice/$2.c
 else
     set -e
-    gcc -O2 -o $1 $1.c
+    gcc -O2 -o ./practice/$1 ./practice/$1.c
     echo "Successed"
-    ./$1
-    rm $1
+    ./practice/$1
+    rm ./practice/$1
 fi
